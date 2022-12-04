@@ -15,15 +15,15 @@ export default function FeelingForm(){
     // local state for feeling value
     const [feeling, setFeeling] = useState('');
 
-    const addFeeling = (event) => {
-      event.preventDefault();
-      dispatch({
-        type: 'ADD_FEELING',
-        payload: feeling
-      })
-    }
+    // const addFeeling = (event) => {
+    //   event.preventDefault();
+    //   dispatch({
+    //     type: 'ADD_FEELING',
+    //     payload: feeling
+    //   })
+    // }
 
   return(
-    <Form />
+    <Form type='ADD_FEELING'  />
   )
 }

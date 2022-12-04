@@ -8,14 +8,19 @@ import logger from 'redux-logger';
 import './index.css';
 
 // studentFeedback reducer
-const studentFeedback = (state = [], action) => {
+const studentFeedback = (state = {}, action) => {
   switch(action.type){
-    // case 'ADD_THING':
-    //   return [...state,action.payload.thing];
+    case 'ADD_FEELING':
+      return {...state, feeling: action.payload.feeling};
+    case 'ADD_UNDERSTANDING':
+      return {...state, feeling: action.payload.understanding};
+    case 'ADD_SUPPORT':
+      return {...state, feeling: action.payload.support};
+    case 'ADD_COMMENT':
+      return {...state, feeling: action.payload.comment};
     default:
-      break;
+      return state;
   }
-  return state;
 }
 
 // Store created

@@ -1,10 +1,13 @@
 .form-body{
   align-items: center;
-
+  align-content: center;
 }
 
 .inputs{
   display: flex;
-  margin: 10px;
-  width: 200px;
+  justify-content: space-evenly;
+}
+
+.input-boxes{
+  width: 250px;
 }

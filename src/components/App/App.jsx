@@ -3,6 +3,7 @@ import { HashRouter as Router, Route } from 'react-router-dom';
 import Header from '../Header/Header';
 import Form from '../Form/Form';
 import Review from '../Review/Review';
+import Submitted from '../Submitted/Submitted';
 import './App.css';
 
 function App() {
@@ -58,7 +59,7 @@ function App() {
         {/* Submission Route */}
         <Route exact path='/submitted'>
           <Header />
-
+          <Submitted />
         </Route>
         {/* Admin Route */}
         <Route exact path='/admin'>

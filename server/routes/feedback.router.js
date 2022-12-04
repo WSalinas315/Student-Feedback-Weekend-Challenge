@@ -2,13 +2,13 @@ const express = require('express');
 const router = express.Router();
 const pool = require('../modules/pool.js');
 
-// GET
+// GET for admin functionality
 
 
-// POST
+// POST for review page
 
 
-// DELETE
+// DELETE for admin functionality
 
 
 module.exports = router;

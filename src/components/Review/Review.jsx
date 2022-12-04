@@ -15,11 +15,20 @@ export default function Review({ nextBtn, prevBtn }) {
   // get data from the store
   const studentData = useSelector(store => store.studentFeedback);
 
+  // Submit function with Axios POST to server.
   const submit = () => {
-
-
-
-    history.push(nextBtn);
+    console.log('Beginning axios POST with:', studentData);
+    axios.post('/feedback', studentData).then((response) => {
+      console.log(response);
+      // reset store data
+      dispatch({
+        type: 'CLEAR_FIELDS'
+      });
+      // move to Submitted component
+      history.push(nextBtn);
+    }).catch((error) => {
+      console.log('Error with POST:', error);
+    });
   }
 
   // function to go back a page
@@ -32,10 +41,11 @@ export default function Review({ nextBtn, prevBtn }) {
       <div className="feedback">
         <h1>Review Your Feedback</h1>
         <br />
+        {/* Write data to review to the DOM */}
         <h2>Feelings: {studentData.feeling}</h2>
         <h2>Understanding: {studentData.understanding}</h2>
         <h2>Support: {studentData.support}</h2>
-        <h2>Comments: {studentData.comment}</h2>
+        <h2>Comments: {studentData.comments}</h2>
       </div>
       <div className="buttons">
         <Button className="btn-objects" variant="contained" onClick={() => goBack()}>PREVIOUS</Button>

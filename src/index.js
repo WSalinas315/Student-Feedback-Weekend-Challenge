@@ -12,7 +12,7 @@ const initialState = {
   feeling: '',
   understanding: '',
   support: '',
-  comment: ''
+  comments: ''
 }
 
 // studentFeedback reducer
@@ -25,7 +25,7 @@ const studentFeedback = (state = initialState, action) => {
     case 'ADD_SUPPORT':
       return {...state, support: action.payload};
     case 'ADD_COMMENT':
-      return {...state, comment: action.payload};
+      return {...state, comments: action.payload};
     case 'CLEAR_FIELDS':
       return initialState;
     default:

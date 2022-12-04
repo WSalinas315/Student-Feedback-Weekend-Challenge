@@ -43,7 +43,7 @@ function App() {
         <Route exact path='/comments'>
           <Header />
           <Form typeData='ADD_COMMENT' 
-                property='comment' 
+                property='comments' 
                 question='Any comments you want to leave?' 
                 inputLabel='Comments' 
                 nextBtn='/review' 

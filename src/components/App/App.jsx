@@ -10,10 +10,11 @@ function App() {
   return (
     <div className='App'>
       <Router>
-        {/* Default route / Add feeling */}
+        {/* Default route / Feeling Route */}
         <Route exact path='/'>
           <Header />
           <Form typeData='ADD_FEELING' 
+                property='feeling' 
                 question='How are you feeling today?' 
                 inputLabel='Feeling?' 
                 nextBtn='/understanding' />
@@ -22,6 +23,7 @@ function App() {
         <Route exact path='/understanding'>
           <Header />
           <Form typeData='ADD_UNDERSTANDING' 
+                property='understanding' 
                 question='How well are you understanding the content?' 
                 inputLabel='Understanding?' 
                 nextBtn='/support' 
@@ -31,6 +33,7 @@ function App() {
         <Route exact path='/support'>
           <Header />
           <Form typeData='ADD_SUPPORT' 
+                property='support' 
                 question='How well are you being supported?' 
                 inputLabel='Support?' 
                 nextBtn='/comments' 
@@ -40,6 +43,7 @@ function App() {
         <Route exact path='/comments'>
           <Header />
           <Form typeData='ADD_COMMENT' 
+                property='comment' 
                 question='Any comments you want to leave?' 
                 inputLabel='Comments' 
                 nextBtn='/review' 

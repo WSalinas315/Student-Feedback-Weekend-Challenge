@@ -19,13 +19,13 @@ const initialState = {
 const studentFeedback = (state = initialState, action) => {
   switch(action.type){
     case 'ADD_FEELING':
-      return {...state, feeling: action.payload.feeling};
+      return {...state, feeling: action.payload};
     case 'ADD_UNDERSTANDING':
-      return {...state, feeling: action.payload.understanding};
+      return {...state, understanding: action.payload};
     case 'ADD_SUPPORT':
-      return {...state, feeling: action.payload.support};
+      return {...state, support: action.payload};
     case 'ADD_COMMENT':
-      return {...state, feeling: action.payload.comment};
+      return {...state, comment: action.payload};
     case 'CLEAR_FIELDS':
       return initialState;
     default:

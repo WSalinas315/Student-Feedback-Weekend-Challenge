@@ -7,8 +7,16 @@ import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 import './index.css';
 
+// initial state for studentFeedback 
+const initialState = {
+  feeling: '',
+  understanding: '',
+  support: '',
+  comment: ''
+}
+
 // studentFeedback reducer
-const studentFeedback = (state = {}, action) => {
+const studentFeedback = (state = initialState, action) => {
   switch(action.type){
     case 'ADD_FEELING':
       return {...state, feeling: action.payload.feeling};
@@ -18,6 +26,8 @@ const studentFeedback = (state = {}, action) => {
       return {...state, feeling: action.payload.support};
     case 'ADD_COMMENT':
       return {...state, feeling: action.payload.comment};
+    case 'CLEAR_FIELDS':
+      return initialState;
     default:
       return state;
   }

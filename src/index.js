@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './components/App/App';
+import { createStore, combineReducers, applyMiddleware} from 'redux';
 import registerServiceWorker from './registerServiceWorker';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
-import { applyMiddleware, combineReducers } from 'redux';
+import './index.css';
 
 // studentFeedback reducer
 const studentFeedback = (state = [], action) => {
@@ -20,9 +20,7 @@ const studentFeedback = (state = [], action) => {
 
 // Store created
 const reduxStore = createStore(
-  combineReducers(
-    {}
-  ), applyMiddleware(logger)
+  combineReducers({studentFeedback}), applyMiddleware(logger)
 );
 
 ReactDOM.render(

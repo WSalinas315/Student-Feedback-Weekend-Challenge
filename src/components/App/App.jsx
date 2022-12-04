@@ -3,6 +3,7 @@ import React from 'react';
 import './App.css';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import Header from '../Header/Header';
+import FeelingForm from '../FeelingForm/FeelingForm';
 
 
 function App() {
@@ -12,7 +13,7 @@ function App() {
       <Router>
         <Route exact path='/'>
           <Header />
-          
+          <FeelingForm />
         </Route>
         <Route exact path='/understanding'>
           <Header />

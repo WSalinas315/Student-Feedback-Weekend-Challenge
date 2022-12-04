@@ -41,7 +41,9 @@ export default function Form({ typeData, property, question, inputLabel, nextBtn
       <h1>{question}</h1>
       <br />
       <div className="inputs">
-        <div className="input-boxes">{inputLabel != "Feeling?" && <Button variant="contained" onClick={() => goBack()}>PREVIOUS</Button>}</div>
+        <div className="input-boxes">
+          {inputLabel != "Feeling?" && <Button variant="contained" onClick={() => goBack()}>PREVIOUS</Button>}
+        </div>
         <div className="input-boxes">{inputLabel == 'Comments' ?
           <FormControl fullWidth>
             <TextField value={inputData} 
@@ -65,7 +67,9 @@ export default function Form({ typeData, property, question, inputLabel, nextBtn
           </FormControl>
           }
         </div>
-        <div className="input-boxes"><Button variant="contained" type="submit">NEXT</Button></div>
+        <div className="input-boxes">
+          <Button variant="contained" type="submit">NEXT</Button>
+        </div>
       </div>
     </form>
   )

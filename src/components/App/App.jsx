@@ -1,9 +1,9 @@
 import React from 'react';
-// import axios from 'axios';
-import './App.css';
-import { HashRouter as Router, Route, Link } from 'react-router-dom';
+import { HashRouter as Router, Route } from 'react-router-dom';
 import Header from '../Header/Header';
 import Form from '../Form/Form';
+import Review from '../Review/Review';
+import './App.css';
 
 function App() {
 
@@ -52,7 +52,8 @@ function App() {
         {/* Review Route */}
         <Route exact path='/review'>
           <Header />
-
+          <Review nextBtn='/submitted' 
+                  prevBtn='/comments' />
         </Route>
         {/* Submission Route */}
         <Route exact path='/submitted'>

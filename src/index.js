@@ -7,7 +7,7 @@ import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 import { applyMiddleware, combineReducers } from 'redux';
 
-
+// studentFeedback reducer
 const studentFeedback = (state = [], action) => {
   switch(action.type){
     // case 'ADD_THING':
@@ -18,7 +18,7 @@ const studentFeedback = (state = [], action) => {
   return state;
 }
 
-
+// Store created
 const reduxStore = createStore(
   combineReducers(
     {}

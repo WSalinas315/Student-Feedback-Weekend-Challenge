@@ -44,8 +44,7 @@ export default function Form({ typeData, property, question, inputLabel, nextBtn
         <div className="input-boxes">{inputLabel != "Feeling?" && <Button variant="contained" onClick={() => goBack()}>PREVIOUS</Button>}</div>
         <div className="input-boxes">{inputLabel == 'Comments' ?
           <FormControl fullWidth>
-            <TextField required 
-                       value={inputData} 
+            <TextField value={inputData} 
                        label={inputLabel} 
                        onChange={(event) => setInputData(event.target.value)} 
                        variant="standard" />

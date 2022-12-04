@@ -2,8 +2,12 @@ import React from "react";
 import StarsIcon from '@mui/icons-material/Stars';
 import { Button } from "@mui/material";
 import './Submitted.css';
+import { useHistory } from "react-router-dom";
 
 export default function Submitted(){
+
+    // history
+    const history = useHistory();
 
   // function to go back to start page
   const returnToStart = () => {

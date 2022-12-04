@@ -6,7 +6,7 @@ const pool = require('../modules/pool.js');
 
 
 // POST for review page
-router.get('/', (req, res) => {
+router.post('/', (req, res) => {
   let feedback = req.body;
   console.log('Adding feedback entry', feedback);
 

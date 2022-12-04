@@ -4,6 +4,7 @@ import Header from '../Header/Header';
 import Form from '../Form/Form';
 import Review from '../Review/Review';
 import Submitted from '../Submitted/Submitted';
+import Admin from '../Admin/Admin';
 import './App.css';
 
 function App() {
@@ -64,7 +65,7 @@ function App() {
         {/* Admin Route */}
         <Route exact path='/admin'>
           <Header />
-
+          <Admin />
         </Route>
       </Router>
     </div>

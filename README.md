@@ -10,6 +10,8 @@ This is a multi-page form with inputs on every page to allow students to express
 
 ![Alt text](public/images/Review.png)
 
+![Alt text](public/images/Admin.png)
+
 ## Installation
 1. Fork and clone this repository.
 2. Create a database named "prime_feedback".

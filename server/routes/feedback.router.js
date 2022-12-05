@@ -4,7 +4,7 @@ const pool = require('../modules/pool.js');
 
 // GET for admin functionality
 router.get('/', (req, res) => {
-  let queryText = `SELECT * FROM "feedback";`;
+  let queryText = `SELECT * FROM "feedback" ORDER BY "id";`;
   pool.query(queryText).then(result => {
     res.send(result.rows);
   }).catch(error => {
@@ -39,6 +39,14 @@ router.delete('/:id', (req, res) => {
 });
 
 // PUT for admin flagging
-
+router.put('/:id', (req, res) => {
+  let changeID = req.params.id;
+  let queryText = `UPDATE "feedback" SET "flagged" = NOT "flagged" WHERE "id"=$1;`;
+  pool.query(queryText, [changeID]).then(result => {
+    res.sendStatus(200);
+  }).catch(error => {
+    console.log('Error with updating feedback flagging in database:', error);
+  });
+});
 
 module.exports = router;

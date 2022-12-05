@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import TableHeader from "../TableHeader/TableHeader";
 import StarsIcon from "@mui/icons-material/Stars";
 import DeleteIcon from '@mui/icons-material/Delete';
-import Button from "@mui/material";
+import { Flag, FlagOutlined } from "@mui/icons-material";
 import axios from 'axios';
 import './Admin.css';
 
@@ -33,6 +33,15 @@ export default function Admin() {
     });
   }
 
+  const toggleFlag = (id) =>{
+    console.log('id is:', id);
+    axios.put('/feedback/'+id).then(response =>{
+      fetchFeedback();
+    }).catch(error => {
+      console.log('Error with Axios Delete in Admin.jsx:', error );
+    });
+  }
+
   return (
     <div className="admin-content">
       <div className="stars">
@@ -48,7 +57,12 @@ export default function Admin() {
               <td>{feedbackItem.understanding}</td>
               <td>{feedbackItem.support}</td>
               <td>{feedbackItem.comments}</td>
-              <td>Flag Button</td>
+              <td>
+                  {feedbackItem.flagged ? 
+                  <Flag onClick={() => toggleFlag(feedbackItem.id)}/> 
+                  : 
+                  <FlagOutlined onClick={() => toggleFlag(feedbackItem.id)}/>}
+              </td>
               <td><DeleteIcon onClick={() => deleteRow(feedbackItem.id)}/></td>
             </tr>
           ))}

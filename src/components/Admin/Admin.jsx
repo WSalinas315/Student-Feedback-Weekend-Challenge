@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import TableHeader from "../TableHeader/TableHeader";
 import StarsIcon from "@mui/icons-material/Stars";
+import DeleteIcon from '@mui/icons-material/Delete';
 import Button from "@mui/material";
 import axios from 'axios';
 import './Admin.css';
@@ -23,6 +24,14 @@ export default function Admin() {
   // Call fetchFeedback
   useEffect(() => { fetchFeedback() }, []);
 
+  const deleteRow = (id) =>{
+    console.log('id is:', id);
+    axios.delete('/feedback/'+id).then(response =>{
+      fetchFeedback();
+    }).catch(error => {
+      console.log('Error with Axios Delete in Admin.jsx:', error );
+    });
+  }
 
   return (
     <div className="admin-content">
@@ -39,8 +48,8 @@ export default function Admin() {
               <td>{feedbackItem.understanding}</td>
               <td>{feedbackItem.support}</td>
               <td>{feedbackItem.comments}</td>
-              {/* <td>Flag Button</td>
-              <td>Delete Button</td> */}
+              <td>Flag Button</td>
+              <td><DeleteIcon onClick={() => deleteRow(feedbackItem.id)}/></td>
             </tr>
           ))}
         </tbody>

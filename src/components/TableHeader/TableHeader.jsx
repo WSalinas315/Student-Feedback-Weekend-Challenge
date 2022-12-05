@@ -9,8 +9,8 @@ export default function TableHeader() {
         <th>Comprehension</th>
         <th>Support</th>
         <th>Comments</th>
-        {/* <th>Flag</th>
-        <th>Delete</th> */}
+        <th>Flag</th>
+        <th>Delete</th>
       </tr>
     </thead>
   )

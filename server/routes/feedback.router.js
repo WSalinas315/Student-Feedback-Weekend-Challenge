@@ -28,6 +28,7 @@ router.post('/', (req, res) => {
 
 // DELETE for admin functionality
 router.delete('/:id', (req, res) => {
+  console.log('In server router delete');
   let deleteID = req.params.id;
   let queryText = `DELETE FROM "feedback" WHERE "id"=$1;`;
   pool.query(queryText, [deleteID]).then(result => {
